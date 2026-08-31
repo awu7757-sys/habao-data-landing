@@ -324,10 +324,50 @@
 }      
        
     }
+
+.brand-header {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #ffd76a, #bfff55);
+  color: #07101d;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+    
   </style>
 </head>
 
 <body>
+
+<header class="brand-header">
+  <div class="brand-logo">H</div>
+  <div class="brand-name">哈寶足球 AI</div>
+</header>  
 
   <section class="hero">
 
