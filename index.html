@@ -81,13 +81,54 @@
       justify-content: center;
     }
 
-    .hero-content {
+.hero-content {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
+  gap: 28px;
 }
 
+.hero-title {
+  margin: 0;
+  font-size: clamp(56px, 7vw, 92px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -2px;
+  color: #ffffff;
+}
+
+.hero-title span {
+  display: inline-block;
+  margin-top: 6px;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffd76a 35%,
+    #8dff72 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  animation: titleRise 0.9s ease-out both;
+}
+
+@keyframes titleRise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    
 .sponsor-badge {
   position: relative;
   display: inline-flex;
@@ -251,6 +292,17 @@
         height: 320px;
         right: -120px;
       }
+
+     .hero-content {
+  gap: 20px;
+}
+
+.hero-title {
+  font-size: 52px;
+  line-height: 1.08;
+  letter-spacing: -1px;
+} 
+       
     }
   </style>
 </head>
@@ -274,6 +326,11 @@
       <span class="sponsor-sub">分析不用你買單</span>
     </div>
 
+    <h1 class="hero-title">
+  多維賽事<br>
+  <span>量化分析</span>
+</h1>
+    
   </div>
 
 </div>
