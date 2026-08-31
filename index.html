@@ -81,21 +81,133 @@
       justify-content: center;
     }
 
-    .demo-box {
-      width: 100%;
-      height: 520px;
+    .hero-content {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
-      border: 1px dashed rgba(255,255,255,0.18);
-      border-radius: 28px;
+.sponsor-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 215, 120, 0.65);
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 210, 90, 0.16),
+    rgba(255, 255, 255, 0.05)
+  );
 
-      color: rgba(255,255,255,0.35);
-      font-size: 18px;
-      letter-spacing: 2px;
-    }
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 0 30px rgba(255,190,60,0.12);
+
+  overflow: hidden;
+  animation: badgePulse 3s ease-in-out infinite;
+}
+
+.sponsor-badge::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -40%;
+  width: 35%;
+  height: 200%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.65),
+    transparent
+  );
+
+  transform: rotate(18deg);
+  animation: badgeShine 3.5s ease-in-out infinite;
+}
+
+.sponsor-icon {
+  position: relative;
+  z-index: 2;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #1a1200;
+  background: linear-gradient(135deg, #fff1a8, #f6c84c);
+
+  font-size: 20px;
+  font-weight: 900;
+
+  box-shadow: 0 0 18px rgba(255,213,100,0.35);
+}
+
+.sponsor-text {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.sponsor-title {
+  color: #ffd66b;
+}
+
+.sponsor-divider {
+  color: rgba(255,255,255,0.35);
+}
+
+.sponsor-sub {
+  color: #ffffff;
+}
+
+@keyframes badgeShine {
+  0% {
+    left: -40%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    left: 120%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 24px rgba(255,190,60,0.10);
+  }
+
+  50% {
+    transform: scale(1.025);
+    box-shadow:
+      0 0 38px rgba(255,190,60,0.25);
+  }
+}
 
     @keyframes backgroundMove {
       0% {
@@ -134,10 +246,6 @@
         width: 92%;
       }
 
-      .demo-box {
-        height: 560px;
-      }
-
       .hero-glow {
         width: 320px;
         height: 320px;
@@ -155,9 +263,20 @@
 
     <div class="hero-inner">
 
-      <div class="demo-box">
-        第一區 HERO 內容區
-      </div>
+      <div class="hero-content">
+
+  <div class="sponsor-badge">
+    <span class="sponsor-icon">✦</span>
+
+    <div class="sponsor-text">
+      <span class="sponsor-title">贊助支持</span>
+      <span class="sponsor-divider">｜</span>
+      <span class="sponsor-sub">分析不用你買單</span>
+    </div>
+
+  </div>
+
+</div>
 
     </div>
 
