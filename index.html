@@ -4,9 +4,164 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>多維賽事量化分析</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: #05070c;
+      color: white;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 900px;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at 20% 20%, rgba(27, 80, 160, 0.28), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(29, 110, 90, 0.20), transparent 35%),
+        linear-gradient(
+          180deg,
+          #07101d 0%,
+          #050a12 55%,
+          #020305 100%
+        );
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255,255,255,0.025) 50%,
+          transparent 100%
+        );
+
+      animation: backgroundMove 8s linear infinite;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: rgba(37, 132, 255, 0.10);
+      filter: blur(80px);
+
+      top: 120px;
+      right: -80px;
+
+      animation: glowFloat 6s ease-in-out infinite;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+
+      width: min(1100px, 90%);
+      margin: 0 auto;
+
+      min-height: 900px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .demo-box {
+      width: 100%;
+      height: 520px;
+
+      border: 1px dashed rgba(255,255,255,0.18);
+      border-radius: 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: rgba(255,255,255,0.35);
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    @keyframes backgroundMove {
+      0% {
+        transform: translateX(-20%);
+      }
+
+      50% {
+        transform: translateX(20%);
+      }
+
+      100% {
+        transform: translateX(-20%);
+      }
+    }
+
+    @keyframes glowFloat {
+      0%, 100% {
+        transform: translateY(0);
+        opacity: 0.7;
+      }
+
+      50% {
+        transform: translateY(30px);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero {
+        min-height: 820px;
+      }
+
+      .hero-inner {
+        min-height: 820px;
+        width: 92%;
+      }
+
+      .demo-box {
+        height: 560px;
+      }
+
+      .hero-glow {
+        width: 320px;
+        height: 320px;
+        right: -120px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
+  <section class="hero">
+
+    <div class="hero-glow"></div>
+
+    <div class="hero-inner">
+
+      <div class="demo-box">
+        第一區 HERO 內容區
+      </div>
+
+    </div>
+
+  </section>
 
 </body>
 </html>
