@@ -1089,6 +1089,221 @@
     opacity: 1;
   }
 }
+
+/* ===== 底部固定浮動 CTA ===== */
+
+.fixed-sports-cta {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: calc(10px + env(safe-area-inset-bottom));
+
+  z-index: 9999;
+
+  min-height: 66px;
+  padding: 9px 10px 9px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  text-decoration: none;
+
+  border-radius: 22px;
+  border: 2px solid #e92323;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe52f 0%,
+      #ffc400 58%,
+      #ffad00 100%
+    );
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(255, 205, 0, 0.30),
+    inset 0 2px 0 rgba(255,255,255,0.75);
+
+  overflow: hidden;
+
+  animation: fixedCtaPulse 2.2s ease-in-out infinite;
+}
+
+
+/* 藍綠裝飾帶 */
+.fixed-sports-cta::before {
+  content: "";
+  position: absolute;
+
+  left: -5%;
+  right: 24%;
+  bottom: -25px;
+
+  height: 42px;
+
+  background: #007d80;
+
+  transform: rotate(-5deg);
+  opacity: 0.95;
+
+  pointer-events: none;
+}
+
+
+/* 白色流光 */
+.fixed-sports-cta::after {
+  content: "";
+  position: absolute;
+
+  top: -60%;
+  left: -35%;
+
+  width: 26%;
+  height: 220%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.55),
+    transparent
+  );
+
+  transform: rotate(20deg);
+
+  animation: fixedCtaShine 3s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+
+.fixed-sports-cta-text {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+  line-height: 1.05;
+}
+
+
+.fixed-sports-small {
+  color: #d71920;
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 3px;
+
+  text-shadow: 0 1px 0 rgba(255,255,255,0.45);
+}
+
+
+.fixed-sports-main {
+  color: #006b6f;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.60),
+    0 2px 3px rgba(0,0,0,0.12);
+}
+
+
+/* 右側立即使用 */
+.fixed-sports-cta-button {
+  position: relative;
+  z-index: 2;
+
+  min-width: 104px;
+  height: 44px;
+
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+  border: 2px solid #ffdc45;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f52b24,
+      #bd0808
+    );
+
+  color: #fff5a8;
+  font-size: 15px;
+  font-weight: 900;
+
+  box-shadow:
+    0 4px 10px rgba(130,0,0,0.28),
+    inset 0 2px 0 rgba(255,255,255,0.25);
+}
+
+
+.fixed-sports-cta-button span {
+  font-size: 26px;
+  line-height: 1;
+
+  animation: fixedArrowMove 0.9s ease-in-out infinite;
+}
+
+
+/* 整顆按鈕呼吸 */
+@keyframes fixedCtaPulse {
+
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow:
+      0 8px 28px rgba(0,0,0,0.35),
+      0 0 16px rgba(255,205,0,0.22);
+  }
+
+  50% {
+    transform: translateY(-2px) scale(1.012);
+    box-shadow:
+      0 10px 32px rgba(0,0,0,0.38),
+      0 0 26px rgba(255,205,0,0.42);
+  }
+}
+
+
+/* 流光掃過 */
+@keyframes fixedCtaShine {
+
+  0% {
+    left: -35%;
+  }
+
+  55% {
+    left: 115%;
+  }
+
+  100% {
+    left: 115%;
+  }
+}
+
+
+/* 箭頭左右移動 */
+@keyframes fixedArrowMove {
+
+  0%, 100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+}
     
   </style>
 </head>
@@ -1268,5 +1483,20 @@
 
   </section>
 
+<a href="https://awu7757-sys.github.io/habao-football-ai/"
+   class="fixed-sports-cta">
+
+  <div class="fixed-sports-cta-text">
+    <span class="fixed-sports-small">運彩玩家的</span>
+    <span class="fixed-sports-main">隨身分析APP</span>
+  </div>
+
+  <div class="fixed-sports-cta-button">
+    立即使用
+    <span>›</span>
+  </div>
+
+</a>
+  
 </body>
 </html>
