@@ -1427,56 +1427,61 @@ body {
     );
 
   background-attachment: scroll;
-}
+} 
 
-/* ===== 淡化足球場線條背景 ===== */
+/* ===== 全頁淡運動背景 ===== */
 
 body::before {
   content: "";
   position: fixed;
-  left: 50%;
-  bottom: -180px;
+  inset: 0;
 
-  width: 720px;
-  height: 520px;
-
-  transform: translateX(-50%);
-
-  border: 1px solid rgba(52, 211, 153, 0.055);
-  border-radius: 12px;
+  pointer-events: none;
+  z-index: 0;
 
   background:
+
+    /* 足球場中線 */
     linear-gradient(
       90deg,
-      transparent 49.9%,
-      rgba(52, 211, 153, 0.055) 50%,
-      transparent 50.1%
+      transparent 49.8%,
+      rgba(52, 211, 153, 0.10) 50%,
+      transparent 50.2%
+    ),
+
+    /* 足球場中圈 */
+    radial-gradient(
+      circle at 50% 68%,
+      transparent 0,
+      transparent 74px,
+      rgba(52, 211, 153, 0.10) 75px,
+      rgba(52, 211, 153, 0.10) 76px,
+      transparent 77px
+    ),
+
+    /* 右上運動斜線 */
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 72%,
+      rgba(0, 200, 190, 0.07) 72.3%,
+      transparent 72.6%
+    ),
+
+    /* 左側淡光 */
+    radial-gradient(
+      circle at 0% 40%,
+      rgba(0, 180, 210, 0.07),
+      transparent 28%
     );
+}
 
-  pointer-events: none;
-  z-index: 0;
-}    
 
-/* ===== 足球場中圈 ===== */
-
-body::after {
-  content: "";
-  position: fixed;
-
-  left: 50%;
-  bottom: 5px;
-
-  width: 170px;
-  height: 170px;
-
-  transform: translateX(-50%);
-
-  border: 1px solid rgba(52, 211, 153, 0.055);
-  border-radius: 50%;
-
-  pointer-events: none;
-  z-index: 0;
-}    
+/* 確保內容在背景線條上方 */
+.hero {
+  position: relative;
+  z-index: 1;
+}
     
   </style>
 </head>
