@@ -1321,6 +1321,79 @@ body {
     transform: translateY(0) scale(1);
   }
 }
+
+/* ===== AI 分析展示整合卡 ===== */
+
+.analysis-showcase {
+  width: 100%;
+  max-width: 390px;
+  margin: 30px auto 46px;
+  padding: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 38, 44, 0.96),
+      rgba(3, 20, 27, 0.98)
+    );
+
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.28),
+    0 0 35px rgba(52, 211, 153, 0.08);
+}
+
+
+/* 標題區改成卡片上半部 */
+.analysis-showcase .analysis-label {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 18px 20px 16px;
+
+  border: none;
+  border-radius: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 185, 129, 0.10),
+      rgba(7, 36, 43, 0.20)
+    );
+
+  border-bottom: 1px solid rgba(52, 211, 153, 0.16);
+}
+
+
+/* 分析圖直接接在標題下面 */
+.analysis-showcase .analysis-preview {
+  width: 100%;
+  max-width: none;
+  height: auto;
+
+  margin: 0;
+  padding: 10px 10px 12px;
+
+  overflow: visible;
+
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+
+/* 圖片本身 */
+.analysis-showcase .analysis-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border-radius: 16px;
+}
     
   </style>
 </head>
@@ -1360,6 +1433,8 @@ body {
   <p class="hero-desc">全方位分析，讓數據替你的判斷把關</p>
 </div>
 
+<div class="analysis-showcase">
+  
 <div class="analysis-label">
   <div class="analysis-label-title">
     <span class="analysis-dot"></span>
@@ -1372,6 +1447,8 @@ body {
   <img src="analysis-preview.png" alt="哈寶足球 AI 賽事分析">
 </div>
 
+</div>
+  
 <div class="features-section">
 
   <div class="features-heading">
