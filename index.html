@@ -958,6 +958,137 @@
     left: 130%;
   }
 }
+
+/* ===== 強化 quick CTA 視覺 ===== */
+
+.quick-cta {
+  border: 1px solid rgba(168, 255, 85, 0.95);
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(52, 211, 153, 0.16),
+      rgba(5, 19, 26, 0.96) 70%
+    );
+
+  box-shadow:
+    0 0 18px rgba(52, 211, 153, 0.28),
+    0 0 38px rgba(168, 255, 85, 0.10),
+    inset 0 0 26px rgba(52, 211, 153, 0.08);
+
+  animation:
+    quickCtaPulseStrong 1.8s ease-in-out infinite;
+}
+
+
+/* 第二層外光圈 */
+.quick-cta::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+
+  border-radius: 999px;
+  border: 1px solid rgba(168, 255, 85, 0.22);
+
+  opacity: 0;
+
+  animation: quickAura 1.8s ease-out infinite;
+
+  pointer-events: none;
+}
+
+
+/* 主標更亮 */
+.quick-cta-main {
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.15),
+    0 0 14px rgba(168,255,85,0.10);
+}
+
+
+/* 第二行增加推進感 */
+.quick-cta-sub {
+  text-shadow: 0 0 10px rgba(168,255,85,0.38);
+}
+
+
+/* 外圈擴散 */
+@keyframes quickAura {
+
+  0% {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.06);
+    opacity: 0;
+  }
+}
+
+
+/* 更明顯的呼吸 */
+@keyframes quickCtaPulseStrong {
+
+  0%, 100% {
+    transform: scale(1);
+
+    box-shadow:
+      0 0 14px rgba(52,211,153,0.20),
+      0 0 30px rgba(168,255,85,0.08),
+      inset 0 0 20px rgba(52,211,153,0.05);
+  }
+
+  50% {
+    transform: scale(1.025);
+
+    box-shadow:
+      0 0 26px rgba(52,211,153,0.42),
+      0 0 55px rgba(168,255,85,0.18),
+      inset 0 0 28px rgba(52,211,153,0.10);
+  }
+}
+
+
+/* 閃電改得更有存在感 */
+.quick-cta-icon {
+  animation: quickBoltStrong 1s ease-in-out infinite;
+}
+
+@keyframes quickBoltStrong {
+
+  0%, 100% {
+    transform: scale(1) rotate(-3deg);
+    filter: drop-shadow(0 0 5px rgba(168,255,85,0.45));
+  }
+
+  50% {
+    transform: scale(1.25) rotate(3deg);
+    filter: drop-shadow(0 0 14px rgba(168,255,85,0.95));
+  }
+}
+
+.quick-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  animation: quickArrowMove 0.9s ease-in-out infinite;
+}
+
+@keyframes quickArrowMove {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateX(6px);
+    opacity: 1;
+  }
+}
     
   </style>
 </head>
@@ -1053,9 +1184,10 @@
     <span>別急著選，先讓數據說話</span>
   </div>
 
-  <div class="quick-cta-sub">
-    今日・明日賽事｜立即查看 AI 分析 →
-  </div>
+<div class="quick-cta-sub">
+  今日・明日賽事｜立即查看 AI 分析
+  <span class="quick-arrow">→</span>
+</div>
 </a>
         
 <div class="steps-section">
