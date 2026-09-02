@@ -1310,6 +1310,32 @@
 body {
   padding-bottom: 105px;
 }
+
+/* ===== 底部 CTA 首次進場動畫 ===== */
+
+.fixed-sports-cta {
+  animation:
+    fixedCtaEnter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both,
+    fixedCtaPulse 2.2s ease-in-out 0.65s infinite;
+}
+
+/* 從畫面下方滑入 */
+@keyframes fixedCtaEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(90px) scale(0.96);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
     
   </style>
 </head>
