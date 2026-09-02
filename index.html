@@ -409,6 +409,47 @@
     rgba(2, 9, 16, 0.95)
   );
 }
+
+.analysis-label {
+  width: 100%;
+  max-width: 390px;
+  margin: 30px auto 14px;
+  padding: 16px 18px;
+  box-sizing: border-box;
+
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  border-radius: 16px;
+}
+
+.analysis-label-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.analysis-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+
+  background: #34d399;
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.9);
+}
+
+.analysis-label-sub {
+  margin-top: 7px;
+  padding-left: 18px;
+
+  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  line-height: 1.5;
+}
     
   </style>
 </head>
@@ -448,6 +489,14 @@
   <p class="hero-desc">全方位分析，讓數據替你的判斷把關</p>
 </div>
 
+<div class="analysis-label">
+  <div class="analysis-label-title">
+    <span class="analysis-dot"></span>
+    AI 實際分析畫面
+  </div>
+  <div class="analysis-label-sub">多維數據整合・即時產出分析結果</div>
+</div>
+        
 <div class="analysis-preview">
   <img src="analysis-preview.png" alt="哈寶足球 AI 賽事分析">
 </div>
