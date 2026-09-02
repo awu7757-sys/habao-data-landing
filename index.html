@@ -806,6 +806,158 @@
     box-shadow: 0 0 18px rgba(255, 183, 50, 0.22);
   }
 }
+
+/* ===== 中段快速 CTA ===== */
+
+.quick-cta {
+  position: relative;
+  display: block;
+  width: calc(100% - 50px);
+  max-width: 390px;
+  margin: 55px auto 60px;
+  padding: 18px 20px;
+
+  text-decoration: none;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 48, 45, 0.95),
+      rgba(8, 29, 34, 0.98)
+    );
+
+  border: 1px solid rgba(52, 211, 153, 0.65);
+  border-radius: 999px;
+
+  box-shadow:
+    0 0 0 rgba(52, 211, 153, 0),
+    inset 0 0 20px rgba(52, 211, 153, 0.05);
+
+  overflow: hidden;
+
+  animation: quickCtaPulse 2.2s ease-in-out infinite;
+}
+
+
+/* 主標題 */
+.quick-cta-main {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+
+/* 閃電 */
+.quick-cta-icon {
+  display: inline-block;
+  font-size: 20px;
+
+  filter: drop-shadow(0 0 8px rgba(168, 255, 85, 0.8));
+
+  animation: quickBolt 1.3s ease-in-out infinite;
+}
+
+
+/* 第二行 */
+.quick-cta-sub {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 7px;
+
+  color: #a8ff55;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+
+/* 流光 */
+.quick-cta::before {
+  content: "";
+  position: absolute;
+
+  top: -50%;
+  left: -70%;
+
+  width: 45%;
+  height: 200%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.16),
+    transparent
+  );
+
+  transform: rotate(18deg);
+
+  animation: quickShine 3s ease-in-out infinite;
+}
+
+
+/* 呼吸光 */
+@keyframes quickCtaPulse {
+
+  0%, 100% {
+    border-color: rgba(52, 211, 153, 0.45);
+
+    box-shadow:
+      0 0 10px rgba(52, 211, 153, 0.08),
+      inset 0 0 20px rgba(52, 211, 153, 0.04);
+  }
+
+  50% {
+    border-color: rgba(168, 255, 85, 0.9);
+
+    box-shadow:
+      0 0 22px rgba(52, 211, 153, 0.25),
+      0 0 45px rgba(168, 255, 85, 0.08),
+      inset 0 0 25px rgba(52, 211, 153, 0.08);
+  }
+}
+
+
+/* 閃電呼吸 */
+@keyframes quickBolt {
+
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+
+/* 光線掃過 */
+@keyframes quickShine {
+
+  0% {
+    left: -70%;
+  }
+
+  55% {
+    left: 130%;
+  }
+
+  100% {
+    left: 130%;
+  }
+}
     
   </style>
 </head>
@@ -895,6 +1047,17 @@
 
 </div>
 
+<a href="https://awu7757-sys.github.io/habao-football-ai/" class="quick-cta">
+  <div class="quick-cta-main">
+    <span class="quick-cta-icon">⚡</span>
+    <span>別急著選，先讓數據說話</span>
+  </div>
+
+  <div class="quick-cta-sub">
+    今日・明日賽事｜立即查看 AI 分析 →
+  </div>
+</a>
+        
 <div class="steps-section">
 
   <div class="steps-heading">
