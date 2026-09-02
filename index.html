@@ -1100,7 +1100,7 @@
 
   z-index: 9999;
 
-  min-height: 66px;
+  min-height: 72px;
   padding: 9px 10px 9px 18px;
 
   display: flex;
@@ -1192,7 +1192,7 @@
 
 .fixed-sports-small {
   color: #d71920;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 900;
   margin-bottom: 3px;
 
@@ -1202,7 +1202,7 @@
 
 .fixed-sports-main {
   color: #006b6f;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 900;
   letter-spacing: -0.4px;
 
@@ -1303,6 +1303,11 @@
   50% {
     transform: translateX(4px);
   }
+}
+
+/* 避免底部浮動 CTA 擋住頁面內容 */
+body {
+  padding-bottom: 105px;
 }
     
   </style>
